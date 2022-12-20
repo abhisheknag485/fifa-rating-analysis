@@ -18,6 +18,7 @@ def predmodel():
     dribbleComp = st.number_input("Enter dribble completion percentage: ")
     pos = st.selectbox("Select Position",poss)
     pos_le = label_encoded_position.transform([pos])
+    pos_le = pos_le[0]
     
     ok = st.button("Predict Total Crop Production")
     if ok:
