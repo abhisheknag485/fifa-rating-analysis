@@ -20,10 +20,10 @@ def predmodel():
     pos_le = label_encoded_position.transform([pos])
     pos_le = pos_le[0]
     
-    ok = st.button("Predict Total Crop Production")
+    ok = st.button("Predict Potential Fifa Rating")
     if ok:
         rating = model.predict([[mp,goals,assists,passComp,crossComp,dribbleComp,pos_le]])
-        st.write("Predicted potential FIFA rating of the player: ",rating)
+        st.write("Predicted potential FIFA rating of the player: ",st.round(rating[0]))
 
 
 def show_predict_page():
